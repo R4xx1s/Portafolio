@@ -10,66 +10,71 @@ const timeline = [
 
 export default function AboutPage() {
   return (
-    <div className="pt-28 pb-20 px-4">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-[#CBD5E1] mb-2">
-          <span className="text-sky-400 font-mono">/</span> Sobre m&iacute;
+    <div className="pt-28 pb-20 px-6">
+      <div className="max-w-[768px] mx-auto">
+        <h1
+          className="text-[30px] font-bold mb-6 tracking-[-1.5px]"
+          style={{ fontFamily: "var(--font-m-plus-rounded)" }}
+        >
+          Sobre mí
         </h1>
 
-        <div className="mt-10 space-y-6 text-[#94A3B8] leading-relaxed">
+        <div className="space-y-4 text-sm text-[rgba(255,255,255,0.64)] leading-relaxed">
           <p>
-            Soy <strong className="text-[#CBD5E1]">Cesar Fernando Tocto Cumbay</strong>,{" "}
-            conocido como <strong className="text-sky-400">Raxxis</strong> en el &aacute;mbito digital.
+            Soy <strong className="text-[rgba(255,255,255,0.92)]">Cesar Fernando Tocto Cumbay</strong>,
+            conocido como <strong className="text-[#81e6d9]">Raxxis</strong> en el ámbito digital.
             Soy Desarrollador Full-Stack e Ingeniero de Sistemas con experiencia en soporte IT
-            e infraestructura tecnol&oacute;gica.
+            e infraestructura tecnológica.
           </p>
 
           <p>
-                Me apasiona construir aplicaciones web escalables que resuelvan problemas reales.
-            Mi enfoque combina el desarrollo frontend y backend con un conocimiento s&oacute;lido
+            Me apasiona construir aplicaciones web escalables que resuelvan problemas reales.
+            Mi enfoque combina el desarrollo frontend y backend con un conocimiento sólido
             de infraestructura, lo que me permite crear soluciones completas desde la base de datos
             hasta la interfaz de usuario.
           </p>
 
           <p>
-            Actualmente trabajo en <strong className="text-[#CBD5E1]">Cl&iacute;nica Aviva / Corp DC</strong>,
-            donde desarroll&eacute; un sistema de inventario tecnol&oacute;gico que centraliza la gesti&oacute;n
-            de activos, integra Active Directory para autenticaci&oacute;n y sincroniza datos con GLPI.
+            Actualmente trabajo en <strong className="text-[rgba(255,255,255,0.92)]">Clínica Aviva / Corp DC</strong>,
+            donde desarrollé un sistema de inventario tecnológico que centraliza la gestión
+            de activos, integra Active Directory para autenticación y sincroniza datos con GLPI.
           </p>
         </div>
 
-        <h2 className="text-xl font-bold text-[#CBD5E1] mt-16 mb-2">
-          <span className="text-sky-400 font-mono">▸</span> Trayectoria
+        <h2
+          className="text-lg font-bold text-[rgba(255,255,255,0.92)] mt-16 mb-6"
+          style={{ fontFamily: "var(--font-m-plus-rounded)" }}
+        >
+          Trayectoria
         </h2>
-        <p className="text-[#64748B] mb-8">Mi camino hasta ahora.</p>
 
         <div className="space-y-0">
           {timeline.map((item, i) => (
             <div key={i} className="flex gap-4 pb-6 relative">
               <div className="flex flex-col items-center">
-                <div className="w-3 h-3 rounded-full bg-sky-500 mt-1.5 z-10 ring-2 ring-[#0F172A]" />
+                <div className="w-2.5 h-2.5 rounded-full bg-[#81e6d9] mt-1.5 z-10 ring-2 ring-[#202023]" />
                 {i < timeline.length - 1 && (
-                  <div className="w-px flex-1 bg-[#334155] mt-1" />
+                  <div className="w-px flex-1 bg-[rgba(255,255,255,0.08)] mt-1" />
                 )}
               </div>
               <div>
-                <span className="text-xs font-mono text-sky-400">{item.year}</span>
-                <p className="text-sm text-[#94A3B8] mt-0.5">{item.event}</p>
+                <span className="text-xs text-[#81e6d9]">{item.year}</span>
+                <p className="text-sm text-[rgba(255,255,255,0.64)] mt-0.5">{item.event}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-16 p-6 rounded-xl bg-[#1E293B] border border-[#334155]">
-          <h3 className="text-sm font-semibold text-sky-400 font-mono mb-3">
-            $ contacto
+        <div className="mt-16 p-6 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]">
+          <h3 className="text-sm font-bold mb-3" style={{ fontFamily: "var(--font-m-plus-rounded)" }}>
+            Contacto
           </h3>
-          <div className="space-y-2 text-sm text-[#94A3B8]">
+          <div className="space-y-2 text-sm text-[rgba(255,255,255,0.64)]">
             <p>
               GitHub:{" "}
               <Link
                 href="https://github.com/R4xx1s"
-                className="text-sky-400 hover:underline"
+                className="text-[#ff63c3] hover:underline"
               >
                 github.com/R4xx1s
               </Link>

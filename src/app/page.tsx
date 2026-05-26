@@ -11,14 +11,14 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#CBD5E1] mb-2">
-            <span className="text-sky-400 font-mono">01.</span> Proyectos destacados
+      <section className="py-20 px-6">
+        <div className="max-w-[768px] mx-auto">
+          <h2
+            className="text-xl font-bold text-[rgba(255,255,255,0.92)] mb-6"
+            style={{ fontFamily: "var(--font-m-plus-rounded)" }}
+          >
+            Proyectos destacados
           </h2>
-          <p className="text-[#64748B] mb-10 max-w-lg">
-            Proyectos seleccionados que muestran mi experiencia t&eacute;cnica.
-          </p>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {destacados.map((proyecto) => (
@@ -29,10 +29,9 @@ export default function Home() {
           <div className="text-center mt-10">
             <Link
               href="/proyectos"
-              className="inline-flex items-center gap-2 text-sm text-[#94A3B8] hover:text-sky-400 transition-colors font-mono"
+              className="text-sm text-[rgba(255,255,255,0.48)] hover:text-[#ff63c3] transition-colors"
             >
-              Ver todos los proyectos
-              <span className="text-sky-400">→</span>
+              Ver todos los proyectos →
             </Link>
           </div>
         </div>

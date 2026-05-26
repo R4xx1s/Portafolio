@@ -7,30 +7,20 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-2xl font-bold text-[#CBD5E1] mb-2">
-          <span className="text-sky-400 font-mono">02.</span> Stack & Skills
-        </h2>
-        <p className="text-[#64748B] mb-10 max-w-lg">
-          Tecnologías con las que trabajo diariamente y en mis proyectos.
-        </p>
-
+    <section className="py-20 px-6">
+      <div className="max-w-[768px] mx-auto">
         <div className="grid sm:grid-cols-2 gap-6">
           {skills.map((group) => (
             <div
               key={group.category}
-              className="p-6 rounded-xl bg-[#1E293B] border border-[#334155]"
+              className="p-6 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]"
             >
-              <h3 className="text-sm font-semibold text-sky-400 font-mono mb-4">
+              <h3 className="text-sm font-bold mb-4" style={{ fontFamily: "var(--font-m-plus-rounded)" }}>
                 {group.category}
               </h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-x-4 gap-y-2">
                 {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className="text-sm text-[#CBD5E1] px-3 py-1.5 rounded-lg bg-[#0F172A] border border-[#334155]"
-                  >
+                  <span key={item} className="text-sm text-[rgba(255,255,255,0.48)]">
                     {item}
                   </span>
                 ))}

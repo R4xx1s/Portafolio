@@ -5,10 +5,15 @@ export default function ProyectosPage() {
   const proyectos = getProyectos();
 
   return (
-    <div className="pt-28 pb-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-[#CBD5E1] mb-2">Proyectos</h1>
-        <p className="text-[#64748B] mb-10">
+    <div className="pt-28 pb-20 px-6">
+      <div className="max-w-[768px] mx-auto">
+        <h1
+          className="text-[30px] font-bold mb-2 tracking-[-1.5px]"
+          style={{ fontFamily: "var(--font-m-plus-rounded)" }}
+        >
+          Proyectos
+        </h1>
+        <p className="text-sm text-[rgba(255,255,255,0.48)] mb-10">
           Todos mis proyectos, desde sistemas empresariales hasta herramientas personales.
         </p>
 
@@ -19,8 +24,8 @@ export default function ProyectosPage() {
         </div>
 
         {proyectos.length === 0 && (
-          <p className="text-center text-[#64748B] py-20">
-            No hay proyectos registrados a&uacute;n.
+          <p className="text-center text-[rgba(255,255,255,0.36)] py-20">
+            No hay proyectos registrados aún.
           </p>
         )}
       </div>

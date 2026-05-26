@@ -1,36 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0F172A;
-  --foreground: #CBD5E1;
-  --accent: #38BDF8;
-  --accent-dark: #0284C7;
-  --card-bg: #1E293B;
-  --border-color: #334155;
+  --bg-primary: #202023;
+  --bg-navbar: rgba(32, 32, 35, 0.8);
+  --text-primary: rgba(255, 255, 255, 0.92);
+  --text-secondary: rgba(255, 255, 255, 0.64);
+  --text-muted: rgba(255, 255, 255, 0.36);
+  --accent-teal: #81e6d9;
+  --accent-pink: #ff63c3;
+  --accent-amber: #fbd38d;
+  --accent-amber-text: #1a202c;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-hover-border: rgba(255, 255, 255, 0.12);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
+  --color-bg: var(--bg-primary);
+  --color-text: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent-teal);
+  --color-pink: var(--accent-pink);
+  --color-amber: var(--accent-amber);
   --color-card: var(--card-bg);
-  --color-border: var(--border-color);
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --color-card-border: var(--card-border);
+  --font-heading: "M PLUS Rounded 1c", sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, monospace;
 }
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--border-color) transparent;
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background: var(--accent);
-  color: #0F172A;
+  background: var(--accent-teal);
+  color: var(--bg-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
 }

@@ -1,16 +1,12 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { M_PLUS_Rounded_1c } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const mPlusRounded = M_PLUS_Rounded_1c({
+  variable: "--font-m-plus-rounded",
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
@@ -18,6 +14,9 @@ export const metadata: Metadata = {
   title: "Raxxis | Cesar Tocto — Full-Stack Developer",
   description:
     "Portafolio de Cesar Fernando Tocto Cumbay (Raxxis). Desarrollador Full-Stack e Ingeniero de Sistemas.",
+  icons: {
+    icon: "/Raxxdev.PNG",
+  },
 };
 
 export default function RootLayout({
@@ -28,9 +27,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${inter.variable} ${jetbrainsMono.variable} antialiased`}
+      className={`${mPlusRounded.variable} antialiased`}
     >
-      <body className="bg-[#0F172A] text-[#CBD5E1] min-h-screen flex flex-col">
+      <body className="bg-[#202023] text-[rgba(255,255,255,0.92)] min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
