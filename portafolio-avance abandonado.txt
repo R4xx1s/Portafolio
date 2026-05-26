@@ -1,0 +1,94 @@
+1. Visión y Posicionamiento Profesional
+Se definió una estrategia de marca personal para destacar una ventaja competitiva clave: la combinación de desarrollo de software y conocimientos profundos en infraestructura técnica.
+
+Perfil Establecido: Desarrollador Full-Stack e Ingeniero de Sistemas.
+
+Discurso de Venta (Pitch): "Construyo aplicaciones web escalables y eficientes enfocadas en resolver problemas reales. Combino mi sólida experiencia en soporte IT e infraestructura para crear herramientas dinámicas, desde la base de datos hasta interfaces intuitivas que los usuarios realmente disfrutan usar."
+
+Proyecto Estrella Definido: Sistema de Gestión de Inventario Dinámico (desarrollado para Corp Dc / Clínica Aviva). Se presentará como un caso de éxito destacando la trazabilidad, operatividad ágil (importación/exportación masiva), Dockerización y optimización de dependencias con pnpm.
+
+2. Decisiones de Diseño e Interfaz (UI/UX)
+El aspecto visual del portafolio se diseñó para transmitir un perfil Senior, técnico y moderno, priorizando la legibilidad y el impacto visual.
+
+Inspiración Principal: Portafolio de Takuya Matsuyama (craftz.dog), caracterizado por su minimalismo y fluidez.
+
+Paleta de Colores: Estilo "Deep Engineering" (Modo Oscuro).
+
+Fondo Base: Azul marino profundo (#0F172A).
+
+Texto Principal: Gris claro (#CBD5E1).
+
+Colores de Acento: Azul cielo/brillante para botones, enlaces y degradados (text-sky-400, bg-sky-500).
+
+Elementos Visuales Clave: * Barra de navegación fija superior con efecto de cristal esmerilado (glassmorphism).
+
+Efectos de resplandor sutil (sombras de neón) en botones principales de llamado a la acción.
+
+Textos degradados para resaltar el nombre y alias (Raxxis).
+
+3. Arquitectura y Stack Tecnológico
+Se seleccionó un conjunto de tecnologías modernas de alto rendimiento, estándar en la industria para 2026, garantizando un ecosistema Full-Stack robusto.
+
+Framework Principal: Next.js 16.2.1 (usando App Router).
+
+Lenguaje: TypeScript (para tipado estricto y código mantenible).
+
+Estilos: Tailwind CSS v4 (motor actualizado para mayor velocidad de compilación).
+
+Gestor de Paquetes: pnpm.
+
+Base de Datos / Backend (BaaS): Supabase (PostgreSQL).
+
+Despliegue Planificado: Vercel (CI/CD automático desde la rama principal de GitHub).
+
+4. Hitos Técnicos Implementados
+Durante la sesión, pasamos de la planificación a la ejecución en el entorno local (VS Code), logrando una base de código estable y libre de errores.
+
+Configuración del Entorno y Repositorio:
+
+Repositorio público creado en GitHub bajo el usuario R4xx1s con el nombre Portafolio.
+
+Solución de restricciones de nomenclatura de npm (uso de carpetas en minúsculas).
+
+Construcción de Componentes UI:
+
+components/Navbar.tsx: Creación del menú de navegación interactivo y responsivo.
+
+app/page.tsx: Construcción del "Hero Section" con la presentación principal, bio y enlaces a GitHub y sección de proyectos.
+
+Resolución de Conflictos Técnicos (Debugging):
+
+Error de React Hydration: Solucionado añadiendo la propiedad suppressHydrationWarning en app/layout.tsx para evitar conflictos con extensiones del navegador.
+
+Migración a Tailwind v4: Se resolvió el error de Turbopack eliminando el archivo antiguo de configuración y actualizando postcss.config.mjs para requerir el nuevo paquete @tailwindcss/postcss. Los estilos globales se actualizaron a la nueva directiva @import "tailwindcss";.
+
+5. Integración de Base de Datos (Supabase)
+Se configuró la infraestructura para que la sección de proyectos sea completamente dinámica, funcionando como un Sistema de Gestión de Contenidos (CMS) personalizado.
+
+Proyecto Creado: Portafolio_Raxxis (Región US).
+
+Seguridad y Variables de Entorno: Se configuró el archivo local .env.local con las claves seguras:
+
+NEXT_PUBLIC_SUPABASE_URL
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY (Publishable key).
+
+Cliente de Conexión: Se creó el archivo lib/supabase.ts para inicializar y exportar el cliente de Supabase usando los tipados estrictos de TypeScript.
+
+Esquema de Datos (Tabla proyectos): Estructura definida para almacenar los casos de éxito:
+
+id (Clave primaria).
+
+titulo (Texto).
+
+descripcion (Texto).
+
+tecnologias (Texto/Array).
+
+url_github (Texto, opcional).
+
+url_demo (Texto, opcional).
+
+Permisos: Se acordó deshabilitar el RLS (Row Level Security) temporalmente en modo lectura para permitir que el portafolio público consuma los datos sin autenticación de usuarios.
+
+Estado Actual del Proyecto: El proyecto cuenta con un entorno de desarrollo funcional, repositorios enlazados, un diseño "Hero" renderizando correctamente con Tailwind v4, y la conexión a la base de datos de Supabase inicializada y lista para ejecutar consultas (fetch).
