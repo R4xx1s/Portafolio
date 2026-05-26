@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic";
+export const revalidate = 60;
 
 import { getProyectos } from "@/lib/supabase";
 import ProjectCard from "@/components/ProjectCard";
