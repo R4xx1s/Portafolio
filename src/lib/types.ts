@@ -5,7 +5,6 @@ export interface Proyecto {
   tecnologias: string[];
   url_vercel?: string;
   url_github?: string;
-  url_demo?: string;
   destacado: boolean;
   created_at: string;
 }

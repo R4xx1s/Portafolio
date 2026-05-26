@@ -1,10 +1,8 @@
-export const revalidate = 60;
-
-import { getProyectos } from "@/lib/supabase";
+import { getProyectos } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 
-export default async function ProyectosPage() {
-  const proyectos = await getProyectos();
+export default function ProyectosPage() {
+  const proyectos = getProyectos();
 
   return (
     <div className="pt-28 pb-20 px-4">

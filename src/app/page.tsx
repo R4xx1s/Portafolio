@@ -1,14 +1,11 @@
-export const revalidate = 60;
-
 import Hero from "@/components/Hero";
 import Skills from "@/components/Skills";
-import { getProyectos } from "@/lib/supabase";
+import { getProyectosDestacados } from "@/lib/projects";
 import ProjectCard from "@/components/ProjectCard";
 import Link from "next/link";
 
-export default async function Home() {
-  const proyectos = await getProyectos();
-  const destacados = proyectos.filter((p) => p.destacado);
+export default function Home() {
+  const destacados = getProyectosDestacados();
 
   return (
     <>

@@ -1,39 +1,41 @@
 import type { Proyecto } from "./types";
 
+// ═══════════════════════════════════════════════════════════
+//  PROYECTOS DEL PORTAFOLIO
+//  ⚡ Edita este array para agregar, modificar o eliminar
+//     proyectos. Al recargar la página se reflejan.
+// ═══════════════════════════════════════════════════════════
+
 const proyectos: Proyecto[] = [
   {
     id: "1",
-    titulo: "Sistema de Inventario Aviva-DC Tech",
+    titulo: "Sistema de Inventario - Clínicas",
     descripcion:
-      "Sistema de gestión de activos tecnológicos para Clínica Aviva. Sincronización con GLPI, autenticación LDAP, roles de usuario, edición masiva, importación/exportación Excel, escaneo QR y más.",
+      "Sistema integral de gestión de activos tecnológicos desarrollado para Clínica Aviva / Corp DC. Centraliza inventarios, sincroniza con GLPI, autentica mediante Active Directory y LDAP, permite edición masiva, importación y exportación desde Excel, y escaneo mediante códigos QR para tracking físico de equipos.",
     tecnologias: ["Next.js 16", "TypeScript", "Tailwind v4", "MySQL", "AD/LDAP", "Docker"],
-    url_vercel: "https://inventario-aviva.vercel.app",
-    url_github: "https://github.com/R4xx1s/aviva-inventario",
+    url_vercel: "https://sistemas-inventarios-clinicas.vercel.app/login",
     destacado: true,
-    created_at: "2026-05-20",
+    created_at: "2025-01-15",
   },
-  {
-    id: "2",
-    titulo: "Portafolio Personal Raxxis",
-    descripcion:
-      "Portafolio profesional con diseño oscuro 'Deep Engineering', CMS dinámico con Supabase, panel admin para gestión de proyectos.",
-    tecnologias: ["Next.js 16", "TypeScript", "Tailwind v4", "Supabase"],
-    url_vercel: "https://portafolio-raxxis.vercel.app",
-    url_github: "https://github.com/R4xx1s/Portafolio",
-    destacado: true,
-    created_at: "2026-05-26",
-  },
-  {
-    id: "3",
-    titulo: "Sistema de Gestión de Inventario Dinámico",
-    descripcion:
-      "Aplicación full-stack para Corp DC con trazabilidad completa, importación/exportación masiva, Dockerización y optimización de dependencias con pnpm.",
-    tecnologias: ["Next.js", "TypeScript", "MySQL", "Docker", "pnpm"],
-    url_github: "https://github.com/R4xx1s/inventario-dinamico",
-    destacado: false,
-    created_at: "2026-04-15",
-  },
+
+  // ─── Para agregar un proyecto, copia el bloque anterior ───
+  //  (incluyendo la coma delante) y pégalo aquí:
+  //
+  //  {
+  //    id: "2",
+  //    titulo: "Nombre del proyecto",
+  //    descripcion: "Descripción del proyecto…",
+  //    tecnologias: ["Tech1", "Tech2"],
+  //    url_vercel: "https://…",        // ← opcional
+  //    url_github: "https://…",        // ← opcional
+  //    destacado: false,
+  //    created_at: "2025-06-01",
+  //  },
 ];
+
+// ═══════════════════════════════════════════════════════════
+//  FUNCIONES — No modificar
+// ═══════════════════════════════════════════════════════════
 
 export function getProyectos(): Proyecto[] {
   return proyectos;
@@ -41,8 +43,4 @@ export function getProyectos(): Proyecto[] {
 
 export function getProyectosDestacados(): Proyecto[] {
   return proyectos.filter((p) => p.destacado);
-}
-
-export function getProyectoById(id: string): Proyecto | undefined {
-  return proyectos.find((p) => p.id === id);
 }

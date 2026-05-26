@@ -8,7 +8,7 @@ const links = [
   { href: "/", label: "Inicio" },
   { href: "/proyectos", label: "Proyectos" },
   { href: "/about", label: "Sobre mí" },
-  { href: "/admin", label: "Admin" },
+
 ];
 
 export default function Navbar() {
