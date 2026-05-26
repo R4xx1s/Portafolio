@@ -8,9 +8,7 @@ import {
   updateProyecto,
   deleteProyecto,
 } from "@/lib/supabase";
-
-const ADMIN_USER = "Raxxis";
-const ADMIN_PASSWORD = "Lo721400762";
+import { verificarLogin } from "./actions";
 
 const emptyForm: Omit<Proyecto, "id" | "created_at"> = {
   titulo: "",
@@ -43,14 +41,15 @@ export default function AdminPage() {
     }
   }, [autenticado]);
 
-  const handleLogin = () => {
-    if (username === ADMIN_USER && password === ADMIN_PASSWORD) {
+  const handleLogin = async () => {
+    const result = await verificarLogin(username, password);
+    if (result.success) {
       setAutenticado(true);
       setUsername("");
       setPassword("");
       setError("");
     } else {
-      setError("Usuario o contraseña incorrectos");
+      setError(result.error || "Error de autenticación");
     }
   };
 
