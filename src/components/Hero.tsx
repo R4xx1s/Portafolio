@@ -1,21 +1,7 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-16">
       <div className="max-w-[768px] mx-auto text-center">
-        {/* ─── Logo ─── */}
-        <div className="flex justify-center mb-6">
-          <Image
-            src="/Raxxdev.PNG"
-            alt="Raxxdev logo"
-            width={96}
-            height={96}
-            className="rounded-2xl"
-            priority
-          />
-        </div>
-
         {/* ─── Espacio para objeto 3D (futuro) ─── */}
         <div
           id="three-container"
