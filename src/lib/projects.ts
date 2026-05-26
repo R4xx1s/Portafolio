@@ -11,7 +11,7 @@ const proyectos: Proyecto[] = [
     id: "1",
     titulo: "Sistema de Inventario - Clínicas",
     descripcion:
-      "Sistema integral de gestión de activos tecnológicos desarrollado para Clínica Aviva / Corp DC. Centraliza inventarios, sincroniza con GLPI, autentica mediante Active Directory y LDAP, permite edición masiva, importación y exportación desde Excel, y escaneo mediante códigos QR para tracking físico de equipos.",
+      "Sistema integral de gestión de activos tecnológicos desarrollado para Clínicas. Centraliza inventarios, sincroniza con GLPI, autentica mediante Active Directory y LDAP, permite edición masiva, importación y exportación desde Excel, y escaneo mediante códigos QR para tracking físico de equipos.",
     tecnologias: ["Next.js 16", "TypeScript", "Tailwind v4", "MySQL", "AD/LDAP", "Docker"],
     url_vercel: "https://sistemas-inventarios-clinicas.vercel.app/login",
     destacado: true,
