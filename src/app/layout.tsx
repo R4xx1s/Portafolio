@@ -11,9 +11,9 @@ const mPlusRounded = M_PLUS_Rounded_1c({
 });
 
 export const metadata: Metadata = {
-  title: "Raxxis | Cesar Tocto — Full-Stack Developer",
+  title: "Dev.Raxxis | Fernando Tocto — Full-Stack Developer",
   description:
-    "Portafolio de Cesar Fernando Tocto Cumbay (Raxxis). Desarrollador Full-Stack e Ingeniero de Sistemas.",
+    "Portafolio de Cesar Fernando Tocto Cumbay (Dev.Raxxis). Desarrollador Full-Stack e Ingeniero de Sistemas.",
   icons: {
     icon: "/Raxxdev.PNG",
   },

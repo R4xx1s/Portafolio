@@ -11,7 +11,7 @@ export default function ProjectCard({ proyecto }: { proyecto: Proyecto }) {
           {proyecto.titulo}
         </h3>
         {proyecto.destacado && (
-          <span className="text-xs text-[rgba(255,255,255,0.36)] ml-2 shrink-0">
+          <span className="text-xs text-[rgb(255,238,0)] ml-2 shrink-0">
             ★ destacado
           </span>
         )}
@@ -36,8 +36,7 @@ export default function ProjectCard({ proyecto }: { proyecto: Proyecto }) {
         {proyecto.url_github && (
           <a
             href={proyecto.url_github}
-            target="_blank"
-            rel="noopener noreferrer"
+
             className="text-xs text-[rgba(255,255,255,0.48)] hover:text-[#81e6d9] transition-colors flex items-center gap-1.5"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -49,9 +48,8 @@ export default function ProjectCard({ proyecto }: { proyecto: Proyecto }) {
         {proyecto.url_vercel && (
           <a
             href={proyecto.url_vercel}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-[rgba(255,255,255,0.48)] hover:text-[#81e6d9] transition-colors flex items-center gap-1.5"
+
+            className="text-xs text-[rgb(255,255,255)] hover:text-[#81e6d9] transition-colors flex items-center gap-1.5"
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
               <path d="M24 22.525H0l12-21.05 12 21.05z" />

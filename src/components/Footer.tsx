@@ -3,13 +3,12 @@ export default function Footer() {
     <footer className="py-8 px-6">
       <div className="max-w-[768px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-[rgba(255,255,255,0.36)]">
-          © {new Date().getFullYear()} Cesar Tocto
+          © {new Date().getFullYear()} Fernando Tocto
         </p>
         <div className="flex items-center gap-4">
           <a
             href="https://github.com/R4xx1s"
-            target="_blank"
-            rel="noopener noreferrer"
+
             className="text-[rgba(255,255,255,0.36)] hover:text-[#81e6d9] transition-colors"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -18,8 +17,7 @@ export default function Footer() {
           </a>
           <a
             href="https://linkedin.com/in/cesartocto"
-            target="_blank"
-            rel="noopener noreferrer"
+
             className="text-[rgba(255,255,255,0.36)] hover:text-[#81e6d9] transition-colors"
           >
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

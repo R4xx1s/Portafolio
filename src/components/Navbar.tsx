@@ -22,16 +22,16 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2">
             <Image
               src="/Raxxdev.PNG"
-              alt="Raxxis"
-              width={32}
-              height={32}
+              alt="Dev.Raxxis"
+              width={45}
+              height={45}
               className="rounded-lg"
             />
             <span
               className="text-lg font-bold"
               style={{ fontFamily: "var(--font-m-plus-rounded)" }}
             >
-              Raxxis
+              Dev.Raxxis
             </span>
           </Link>
 
@@ -51,8 +51,7 @@ export default function Navbar() {
             ))}
             <a
               href="https://github.com/R4xx1s"
-              target="_blank"
-              rel="noopener noreferrer"
+
               className="text-[rgba(255,255,255,0.48)] hover:text-[#81e6d9] transition-colors"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

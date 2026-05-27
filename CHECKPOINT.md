@@ -1,6 +1,6 @@
-# CHECKPOINT — Portafolio Raxxis
+# CHECKPOINT — Portafolio Dev.Raxxis
 
-> **Última actualización:** 2026-05-26 (2do checkpoint)
+> **Última actualización:** 2026-05-26 (4to checkpoint — model-viewer)
 > **Comando de reactivación:** `checkpoint`
 > **Creado por:** opencode (DeepSeek V4 Flash)
 
@@ -16,7 +16,7 @@
 | **Package manager** | npm (lock: `package-lock.json`) |
 | **Git remote** | `https://github.com/R4xx1s/Portafolio` (rama: master) |
 | **Deploy** | Vercel (auto desde GitHub) |
-| **Desarrollador** | Cesar Fernando Tocto Cumbay — alias **Raxxis** |
+| **Desarrollador** | Cesar Fernando Tocto Cumbay — alias **Dev.Raxxis** |
 | **Dominio** | Comprar: raxxis.dev o raxxis.tech (aún no adquirido) |
 
 ---
@@ -35,7 +35,9 @@ src/
 │       └── page.tsx        ← Grid de todos los proyectos
 ├── components/
 │   ├── Navbar.tsx          ← Fixed, glassmorphism, responsive
-│   ├── Hero.tsx            ← Presentación + CTAs + badges tech
+│   ├── Hero.tsx            ← Presentación + CTAs (server component)
+│   ├── ThreeCanvas.tsx     ← Wrapper cliente (dynamic + mount guard)
+│   ├── Scene3D.tsx         ← <model-viewer> con Mech.glb
 │   ├── ProjectCard.tsx     ← Card con badges, GitHub/Vercel links
 │   ├── Skills.tsx          ← Grid 4 categorías
 │   └── Footer.tsx          ← Copyright + GitHub/LinkedIn
@@ -99,9 +101,10 @@ src/
 - Formato: PNG (no necesita .ico, usar favicon desde el PNG)
 
 ### Espacio 3D:
-- Hay un contenedor preparado en Hero.tsx para un futuro objeto 3D
-- Stack recomendado: `@react-three/fiber` + `@react-three/drei`
-- Se instalará cuando esté disponible el modelo o diseño
+- Modelo Mech.glb renderizado con `<model-viewer>` (web component de Google)
+- Auto-rotación, controles de cámara, shadow grounding
+- No requiere three.js ni React bindings 3D
+- Stack: `@google/model-viewer`
 
 ---
 
@@ -136,6 +139,10 @@ Los proyectos se editan exclusivamente en:
 | 2026-05-26 | Login por Server Action | Seguridad: credenciales nunca llegan al cliente (aunque admin se eliminó después) |
 | 2026-05-26 | Logo Raxxdev.PNG | Recurso proporcionado por el usuario |
 | 2026-05-26 | Páginas estáticas (SSG) | Rendimiento: navegación instantánea, sin depender de servidor |
+| 2026-05-26 | Modelo 3D Mech.glb en Hero | <model-viewer> web component de Google, liviano y compatible |
+| 2026-05-26 | Reemplazar R3F por model-viewer | Turbopack crasheaba con `@react-three/fiber`; model-viewer funciona sin issues |
+| 2026-05-26 | ThreeCanvas wrapper | Mount guard + dynamic import para evitar SSR del web component |
+| 2026-05-26 | `--webpack` en dev | Escape hatch oficial para evitar panic de Turbopack con `next/dynamic` |
 
 ---
 
@@ -146,7 +153,8 @@ Los proyectos se editan exclusivamente en:
   "dependencies": {
     "next": "16.2.6",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "@google/model-viewer": "^4.2.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -161,21 +169,18 @@ Los proyectos se editan exclusivamente en:
 }
 ```
 
-### Para añadir 3D en futuro:
-```bash
-npm install @react-three/fiber @react-three/drei @types/three
-```
-
 ---
 
 ## 7. COMANDOS ÚTILES
 
 | Comando | Descripción |
 |---------|-------------|
-| `npm run dev` | Iniciar servidor dev |
+| `npm run dev` | Iniciar servidor dev (webpack por HMR crash) |
 | `npm run build` | Build producción |
 | `npm run start` | Servir build local |
 | `git push origin master` | Subir cambios → Vercel redeploy auto |
+
+> **Nota:** Turbopack crashea en dev con `next/dynamic` + `ssr: false` (bug Next.js 16.2.6). Se usa `--webpack` como escape hatch oficial. Build y Vercel funcionan sin flags.
 
 ---
 

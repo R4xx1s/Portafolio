@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="space-y-4 text-sm text-[rgba(255,255,255,0.64)] leading-relaxed">
           <p>
             Soy <strong className="text-[rgba(255,255,255,0.92)]">Cesar Fernando Tocto Cumbay</strong>,
-            conocido como <strong className="text-[#81e6d9]">Raxxis</strong> en el ámbito digital.
+            conocido como <strong className="text-[#81e6d9]">Dev.Raxxis</strong> en el ámbito digital.
             Soy Desarrollador Full-Stack e Ingeniero de Sistemas con experiencia en soporte IT
             e infraestructura tecnológica.
           </p>
@@ -35,7 +35,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Actualmente trabajo en <strong className="text-[rgba(255,255,255,0.92)]">Clínica Aviva / Corp DC</strong>,
+            Actualmente trabajo en <strong className="text-[rgba(255,255,255,0.92)]">Corp DC — Clínica Aviva</strong>,
             donde desarrollé un sistema de inventario tecnológico que centraliza la gestión
             de activos, integra Active Directory para autenticación y sincroniza datos con GLPI.
           </p>
