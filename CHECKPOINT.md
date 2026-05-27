@@ -1,6 +1,6 @@
 # CHECKPOINT — Portafolio Dev.Raxxis
 
-> **Última actualización:** 2026-05-26 (4to checkpoint — model-viewer)
+> **Última actualización:** 2026-05-27 (7mo checkpoint — pulido hero + banner)
 > **Comando de reactivación:** `checkpoint`
 > **Creado por:** opencode (DeepSeek V4 Flash)
 
@@ -32,17 +32,22 @@ src/
 │   ├── about/
 │   │   └── page.tsx        ← Bio + timeline profesional
 │   └── proyectos/
-│       └── page.tsx        ← Grid de todos los proyectos
+│       ├── page.tsx        ← Grid de todos los proyectos
+│       └── [id]/
+│           └── page.tsx    ← Detalle de proyecto (SSG)
 ├── components/
-│   ├── Navbar.tsx          ← Fixed, glassmorphism, responsive
+│   ├── Navbar.tsx          ← Fixed, glassmorphism, Logo SVG, link activo teal
 │   ├── Hero.tsx            ← Presentación + CTAs (server component)
 │   ├── ThreeCanvas.tsx     ← Wrapper cliente (dynamic + mount guard)
 │   ├── Scene3D.tsx         ← <model-viewer> con Mech.glb
-│   ├── ProjectCard.tsx     ← Card con badges, GitHub/Vercel links
+│   ├── ProjectCard.tsx     ← Card con thumbnail, badges, GitHub/Vercel links
+│   ├── ProjectDetail.tsx   ← Detalle con breadcrumb, Meta badges, links
 │   ├── Skills.tsx          ← Grid 4 categorías
+│   ├── Section.tsx         ← Wrapper animado (framer-motion fade-in + slide-up)
+│   ├── Logo.tsx            ← SVG footprint + hover rotate, reemplaza PNG en navbar
 │   └── Footer.tsx          ← Copyright + GitHub/LinkedIn
 └── lib/
-    ├── types.ts            ← Interfaz Proyecto
+    ├── types.ts            ← Interfaz Proyecto (incluye thumbnail)
     └── projects.ts         ← ÚNICA fuente de datos (editar aquí)
 ```
 
@@ -51,6 +56,7 @@ src/
 |------|------|-------------|
 | `/` | Static | Home: Hero, proyectos destacados, Skills |
 | `/proyectos` | Static | Grid completo de proyectos |
+| `/proyectos/[id]` | Static | Detalle de proyecto individual (SSG) |
 | `/about` | Static | Biografía y timeline profesional |
 
 ---
@@ -97,8 +103,9 @@ src/
 - Contenido centrado, minimalista
 
 ### Logo:
-- Archivo: `/public/Raxxdev.PNG`
-- Formato: PNG (no necesita .ico, usar favicon desde el PNG)
+- Componente SVG en `src/components/Logo.tsx` (ícono footprint + texto "Dev.Raxxis")
+- Hover: rotación 20deg del SVG (heredado de craftz.dog)
+- Favicon: `/public/images/Raxxdev.PNG` (se movió de la raíz)
 
 ### Espacio 3D:
 - Modelo Mech.glb renderizado con `<model-viewer>` (web component de Google)
@@ -115,6 +122,7 @@ Los proyectos se editan exclusivamente en:
 
 ### Proyecto actual:
 1. **Sistema de Inventario - Clínicas** — `destacado: true`
+   - Thumbnail: `/images/SistemaClinicas.png`
    - URL Vercel: https://sistemas-inventarios-clinicas.vercel.app/login
    - GitHub: repo privado (no hay url_github)
    - Stack: Next.js 16, TS, Tailwind v4, MySQL, AD/LDAP, Docker
@@ -143,6 +151,23 @@ Los proyectos se editan exclusivamente en:
 | 2026-05-26 | Reemplazar R3F por model-viewer | Turbopack crasheaba con `@react-three/fiber`; model-viewer funciona sin issues |
 | 2026-05-26 | ThreeCanvas wrapper | Mount guard + dynamic import para evitar SSR del web component |
 | 2026-05-26 | `--webpack` en dev | Escape hatch oficial para evitar panic de Turbopack con `next/dynamic` |
+| 2026-05-26 | Renombre Raxxis → Dev.Raxxis | Consistencia de marca personal |
+| 2026-05-26 | Hero sin min-h-screen | Espacio excesivo entre Hero y "Proyectos destacados" |
+| 2026-05-26 | Hero texto mejorado + bandera Perú SVG | Más legible, bandera visible en cualquier OS |
+| 2026-05-26 | Links sin target=_blank | Navegación en misma pestaña según solicitud del usuario |
+| 2026-05-26 | LinkedIn color oficial #0A66C2 | Consistencia con marca de LinkedIn |
+| 2026-05-26 | Logo SVG footprint + hover rotate | Adaptado de craftz.dog (icono huella + animación) |
+| 2026-05-26 | Section animada con framer-motion | Secciones de Home con fade-in + slide-up, delays escalonados |
+| 2026-05-26 | ProjectCard ahora es Link a detalle | Cada proyecto navega a `/proyectos/[id]` |
+| 2026-05-26 | Navbar: link activo con fondo teal (#88ccca) | Heredado de craftz.dog: indica página actual visualmente |
+| 2026-05-26 | Página detalle de proyecto [id] | Breadcrumb, thumbnail grande, Meta badges, links |
+| 2026-05-26 | Thumbnail en proyectos | Campo `thumbnail` en `Proyecto`, imagen con next/image |
+| 2026-05-26 | Raxxdev.PNG movido a /public/images/ | Organización de assets |
+| 2026-05-26 | Timeline en about: año en bold + inline con evento | Estilo craftz.dog más compacto y legible |
+| 2026-05-27 | Hero texto simplificado a tagline corto | Evitar redundancia con banner de saludo |
+| 2026-05-27 | Banner saludo: logo fuera del box, derecha, reflejado 150px | Diseño solicitado por usuario, más vistoso |
+| 2026-05-27 | Logo vuelve a Raxxdev.PNG (descarta SVG footprint) | Solicitud del usuario, prefiere su imagen de marca |
+| 2026-05-27 | Bandera Perú SVG en banner en vez de emoji | Emoji no visible en algunos entornos |
 
 ---
 
@@ -154,7 +179,8 @@ Los proyectos se editan exclusivamente en:
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "@google/model-viewer": "^4.2.0"
+    "@google/model-viewer": "^4.2.0",
+    "framer-motion": "^12.9.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

@@ -7,27 +7,31 @@ const skills = [
 
 export default function Skills() {
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-[768px] mx-auto">
-        <div className="grid sm:grid-cols-2 gap-6">
-          {skills.map((group) => (
-            <div
-              key={group.category}
-              className="p-6 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]"
-            >
-              <h3 className="text-sm font-bold mb-4" style={{ fontFamily: "var(--font-m-plus-rounded)" }}>
-                {group.category}
-              </h3>
-              <div className="flex flex-wrap gap-x-4 gap-y-2">
-                {group.items.map((item) => (
-                  <span key={item} className="text-sm text-[rgba(255,255,255,0.48)]">
-                    {item}
-                  </span>
-                ))}
-              </div>
+    <section className="mb-12">
+      <h2
+        className="text-lg font-bold text-[rgba(255,255,255,0.92)] underline underline-offset-[6px] decoration-[#525252] decoration-4 mb-6"
+        style={{ fontFamily: "var(--font-m-plus-rounded)" }}
+      >
+        Habilidades
+      </h2>
+      <div className="grid sm:grid-cols-2 gap-6">
+        {skills.map((group) => (
+          <div
+            key={group.category}
+            className="p-6 rounded-xl bg-[rgba(255,255,255,0.04)] border border-[rgba(255,255,255,0.06)]"
+          >
+            <h3 className="text-sm font-bold mb-4" style={{ fontFamily: "var(--font-m-plus-rounded)" }}>
+              {group.category}
+            </h3>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              {group.items.map((item) => (
+                <span key={item} className="text-sm text-[rgba(255,255,255,0.48)]">
+                  {item}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "Portafolio de Cesar Fernando Tocto Cumbay (Dev.Raxxis). Desarrollador Full-Stack e Ingeniero de Sistemas.",
   icons: {
-    icon: "/Raxxdev.PNG",
+    icon: "/images/Raxxdev.PNG",
   },
 };
 
@@ -31,7 +31,7 @@ export default function RootLayout({
     >
       <body className="bg-[#202023] text-[rgba(255,255,255,0.92)] min-h-screen flex flex-col">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-8">{children}</main>
         <Footer />
       </body>
     </html>

@@ -13,6 +13,7 @@ const proyectos: Proyecto[] = [
     descripcion:
       "Sistema integral de gestión de activos tecnológicos desarrollado para Clínicas. Centraliza inventarios, sincroniza con GLPI, autentica mediante Active Directory y LDAP, permite edición masiva, importación y exportación desde Excel, y escaneo mediante códigos QR para tracking físico de equipos.",
     tecnologias: ["Next.js 16", "TypeScript", "Tailwind v4", "MySQL", "AD/LDAP", "Docker"],
+    thumbnail: "/images/SistemaClinicas.png",
     url_vercel: "https://sistemas-inventarios-clinicas.vercel.app/login",
     destacado: true,
     created_at: "2025-01-15",

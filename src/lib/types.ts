@@ -3,6 +3,7 @@ export interface Proyecto {
   titulo: string;
   descripcion: string;
   tecnologias: string[];
+  thumbnail?: string;
   url_vercel?: string;
   url_github?: string;
   destacado: boolean;

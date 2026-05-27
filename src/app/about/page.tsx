@@ -48,9 +48,9 @@ export default function AboutPage() {
           Trayectoria
         </h2>
 
-        <div className="space-y-0">
+        <div className="space-y-4">
           {timeline.map((item, i) => (
-            <div key={i} className="flex gap-4 pb-6 relative">
+            <div key={i} className="flex gap-4">
               <div className="flex flex-col items-center">
                 <div className="w-2.5 h-2.5 rounded-full bg-[#81e6d9] mt-1.5 z-10 ring-2 ring-[#202023]" />
                 {i < timeline.length - 1 && (
@@ -58,8 +58,12 @@ export default function AboutPage() {
                 )}
               </div>
               <div>
-                <span className="text-xs text-[#81e6d9]">{item.year}</span>
-                <p className="text-sm text-[rgba(255,255,255,0.64)] mt-0.5">{item.event}</p>
+                <span className="text-sm font-bold text-[#81e6d9] mr-3">
+                  {item.year}
+                </span>
+                <span className="text-sm text-[rgba(255,255,255,0.64)]">
+                  {item.event}
+                </span>
               </div>
             </div>
           ))}
