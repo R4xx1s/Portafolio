@@ -1,13 +1,15 @@
+"use client";
+
+import dynamic from "next/dynamic";
+
+const Scene3D = dynamic(() => import("@/components/Scene3D"), { ssr: false });
+
 export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-6 pt-16">
       <div className="max-w-[768px] mx-auto text-center">
-        {/* ─── Espacio para objeto 3D (futuro) ─── */}
-        <div
-          id="three-container"
-          className="w-full h-[200px] flex items-center justify-center text-[rgba(255,255,255,0.16)] text-sm"
-        >
-          {/* Aquí irá el objeto 3D con @react-three/fiber */}
+        <div className="w-full h-[220px] flex items-center justify-center">
+          <Scene3D />
         </div>
 
         <h1 className="text-[30px] sm:text-[36px] font-bold leading-[1.2] tracking-[-1.5px] mb-4"
