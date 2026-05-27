@@ -21,23 +21,26 @@ export default function AboutPage() {
 
         <div className="space-y-4 text-sm text-[rgba(255,255,255,0.64)] leading-relaxed">
           <p>
-            Soy <strong className="text-[rgba(255,255,255,0.92)]">Cesar Fernando Tocto Cumbay</strong>,
-            conocido como <strong className="text-[#81e6d9]">Dev.Raxxis</strong> en el ámbito digital.
-            Soy Desarrollador Full-Stack e Ingeniero de Sistemas con experiencia en soporte IT
-            e infraestructura tecnológica.
+            Soy <strong className="text-[rgba(255,255,255,0.92)]">Fernando Tocto</strong>,
+            estudiante de Ingeniería de Sistemas e Informática en la UTP y actualmente me desempeño como Técnico de Soporte Nivel 2 
+            en CORP DC. Mi perfil es inusual: disfruto tanto metiendo las manos en el hardware y resolviendo 
+            incidencias on-site, como diseñando la arquitectura de un sistema web desde cero.
           </p>
 
           <p>
-            Me apasiona construir aplicaciones web escalables que resuelvan problemas reales.
-            Mi enfoque combina el desarrollo frontend y backend con un conocimiento sólido
-            de infraestructura, lo que me permite crear soluciones completas desde la base de datos
-            hasta la interfaz de usuario.
+            Me gusta ir más allá del soporte tradicional. Si veo un proceso manual que toma horas, como el mapeo de equipos o auditorías, 
+            mi instinto es desarrollar una plataforma full-stack para automatizarlo.
           </p>
 
           <p>
             Actualmente trabajo en <strong className="text-[rgba(255,255,255,0.92)]">Corp DC — Clínica Aviva</strong>,
             donde desarrollé un sistema de inventario tecnológico que centraliza la gestión
             de activos, integra Active Directory para autenticación y sincroniza datos con GLPI.
+          </p>
+
+          <p>
+            Fuera de la terminal y los servidores, me gusta jugar en equipo en partidas competitivas de shooters como Valorant, 
+            o afinar mi atención al detalle preparando un buen Pisco Sour o cocinando un domingo en casa.
           </p>
         </div>
 

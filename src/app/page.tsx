@@ -115,7 +115,7 @@ export default function Home() {
               @R4xx1s
             </a>
             <a
-              href="https://linkedin.com/in/fernando-tocto"
+              href="https://www.linkedin.com/in/fernandotocto/"
               className="inline-flex items-center gap-3 text-sm text-[rgba(255,255,255,0.64)] hover:text-[#81e6d9] transition-colors"
             >
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

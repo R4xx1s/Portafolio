@@ -13,9 +13,9 @@ export default function Hero() {
       </h1>
 
       <p className="text-[rgba(255,255,255,0.64)] text-sm max-w-[517px] mx-auto leading-relaxed mb-8">
-        Creando soluciones web completas{" "}
-        <span className="text-[rgba(255,255,255,0.16)]">—</span>{" "}
-        de la base de datos al navegador.
+        Construyendo el puente entre el hardware y el código. 
+        Desarrollador Full-Stack y Especialista TI orientado a crear herramientas 
+        que optimizan recursos y garantizan la continuidad operativa
       </p>
 
       <div className="flex items-center justify-center gap-2">
@@ -30,7 +30,7 @@ export default function Hero() {
         </a>
         <span className="text-[rgba(255,255,255,0.16)]">/</span>
         <a
-          href="https://linkedin.com/in/fernando-tocto"
+          href="https://www.linkedin.com/in/fernandotocto/"
 
           className="text-[#0A66C2] text-sm hover:underline"
         >

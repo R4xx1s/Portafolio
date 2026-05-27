@@ -16,7 +16,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://linkedin.com/in/cesartocto"
+            href="https://www.linkedin.com/in/fernandotocto/"
 
             className="text-[rgba(255,255,255,0.36)] hover:text-[#81e6d9] transition-colors"
           >
