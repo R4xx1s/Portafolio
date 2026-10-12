@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Fernando Tocto
 
-## Getting Started
+Portfolio profesional de **Cesar Fernando Tocto Cumbay** — Desarrollador Full-Stack & Ingeniero de Sistemas.
+Construido con **Next.js 14 (App Router) + TypeScript + Tailwind CSS**, generado estáticamente (SSG) y listo para desplegar en Vercel.
 
-First, run the development server:
+## Cómo ejecutarlo en local
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cómo desplegarlo
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Sube este proyecto a un repositorio de GitHub.
+2. Importa el repositorio en [vercel.com](https://vercel.com) → Vercel detecta Next.js automáticamente.
+3. Cada `git push` a la rama principal genera un despliegue nuevo.
 
-## Learn More
+## Con Docker
 
-To learn more about Next.js, take a look at the following resources:
+Producción (compila la imagen standalone y sirve el sitio):
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker compose up --build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Desarrollo (monta el código y corre `next dev` con recarga en vivo):
 
-## Deploy on Vercel
+```bash
+docker compose -f docker-compose.dev.yml up --build
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+En ambos casos el sitio queda en http://localhost:3000.
+Con el compose de desarrollo, cada cambio en el código se refleja automáticamente.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Estructura
+
+```
+app/                  Páginas y layout (App Router)
+  page.tsx            Home (todas las secciones)
+  projects/[slug]/    Case studies dinámicos (Sistema de Gestión de Activos TI, Skills Browser)
+  sitemap.ts          Sitemap generado automáticamente
+  robots.ts           robots.txt generado automáticamente
+  icon.png            Favicon (logo Raxxdev)
+components/           Componentes de UI (Hero, Experience, Projects, etc.)
+components/ui/        Primitivas reutilizables (Button, Tag, Section, Placeholder)
+data/                 Todo el contenido real, separado de la presentación
+  site.ts             Datos generales (nombre, email, enlaces, dominio, ruta del CV)
+  experience.ts       Trayectoria profesional
+  projects.ts         Case studies completos
+  technologies.ts     Tecnologías agrupadas por área
+  education.ts        Formación e idiomas
+public/cv/            CV en PDF
+public/images/        Capturas e imágenes (profile, clinicas)
+public/videos/        Vídeos de demostración
+```
+
+## Añadir contenido
+
+- **Nuevo proyecto**: agrega una entrada en `data/projects.ts`; la página `/projects/[slug]` se genera automáticamente.
+- **Nueva experiencia**: añade una entrada en `data/experience.ts`.
+- **Imágenes**: colócalas en `public/images/` y referéncialas desde el data correspondiente.
+- **IR al dominio/meta**: el dominio y los metadatos se toman de `data/site.ts`.

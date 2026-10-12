@@ -1,0 +1,18 @@
+# Producción: compila la imagen standalone y sirve el sitio en http://localhost:3000
+#
+#   docker compose up --build
+#
+# Para desarrollo con recarga en vivo, usa docker-compose.dev.yml:
+#
+#   docker compose -f docker-compose.dev.yml up --build
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fernando-tocto-portfolio
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
