@@ -35,7 +35,7 @@ export function Hero() {
         <div className="mx-auto flex w-full max-w-[360px] min-w-0 flex-col gap-5 self-center sm:max-w-[400px] lg:mx-0 lg:justify-self-end">
           <div className="relative aspect-[4/5] overflow-hidden rounded-[4px] border border-ink-border bg-ink-900 shadow-2xl shadow-ink-950/30">
             <div aria-hidden className="absolute inset-x-5 top-5 h-px bg-signal/45" />
-            <div aria-hidden className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-ink-950/80 to-transparent" />
+            <div aria-hidden className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-ink-950/40 to-transparent" />
             <div aria-hidden className="absolute right-5 top-8 h-20 w-px bg-ink-border" />
             <div aria-hidden className="absolute left-5 top-10 font-mono text-[11px] text-paper-500/90">
               01
@@ -47,7 +47,7 @@ export function Hero() {
               height={666}
               priority
               sizes="(min-width: 1024px) 400px, (min-width: 640px) 400px, 360px"
-              className="absolute inset-x-0 bottom-0 mx-auto h-[95%] w-auto max-w-none object-contain object-bottom"
+              className="absolute inset-0 h-full w-full object-contain px-6 pb-6 pt-10"
             />
           </div>
 
