@@ -57,6 +57,11 @@ export type Project = {
   liveUrl?: string;
   githubUrl?: string;
   videoPlaceholder?: string;
+  demoCredentials?: {
+    user: string;
+    password: string;
+    note?: string;
+  };
   sections: ProjectSection[];
 };
 
@@ -74,13 +79,18 @@ export const projects: Project[] = [
     featured: true,
     cover: {
       image: {
-        src: "/images/clinicas/SistemaClinicas-web-dashboard.png",
+        src: "/images/kardex/Miniatura-proyecto-kardex.png",
         alt: "Dashboard de Kardex (Sistema de Gestión de Activos TI) con el estado del inventario",
-        width: 1440,
-        height: 810,
+        width: 1600,
+        height: 900,
         caption: "Panel de gestión de activos desplegado en producción",
         frame: "desktop",
       },
+    },
+    demoCredentials: {
+      user: "admin",
+      password: "Admin123",
+      note: "Cuenta de demostración",
     },
     heroIntro:
       "Sistema web que desarrollé e implementé en producción para centralizar el control de inventario y activos de TI en un entorno corporativo multisede. Permite registrar, buscar e importar equipos distribuidos por sedes y áreas, con etiquetas y actas en PDF, escáner QR, historial de movimientos y administración de usuarios con roles.",
@@ -103,7 +113,7 @@ export const projects: Project[] = [
       "jsPDF",
       "Vitest",
     ],
-    liveUrl: "https://sistemas-inventarios-clinicas.vercel.app/login",
+    liveUrl: "https://portafolio-devraxxis.vercel.app/",
     githubUrl: undefined,
     sections: [
       {
@@ -134,26 +144,26 @@ export const projects: Project[] = [
         ],
         images: [
           {
-            src: "/images/clinicas/SistemaClinicas-login.png",
+            src: "/images/kardex/login-kardex.png",
             alt: "Pantalla de inicio de sesión de Kardex (Sistema de Gestión de Activos TI)",
-            width: 1440,
-            height: 810,
+            width: 1907,
+            height: 909,
             caption: "Inicio de sesión corporativo",
             frame: "desktop",
           },
           {
-            src: "/images/clinicas/SistemaClinicas-web-dashboard.png",
+            src: "/images/kardex/panel-principal.png",
             alt: "Panel principal con métricas del inventario",
-            width: 1440,
-            height: 810,
+            width: 1912,
+            height: 911,
             caption: "Panel principal de gestión",
             frame: "desktop",
           },
           {
-            src: "/images/clinicas/SistemaClinicas-inventario.png",
+            src: "/images/kardex/kardex-inventario.png",
             alt: "Vista de inventario de activos con equipos y estados",
-            width: 1440,
-            height: 810,
+            width: 997,
+            height: 887,
             caption: "Inventario de activos",
             frame: "desktop",
           },
@@ -178,32 +188,41 @@ export const projects: Project[] = [
       {
         heading: "Etiquetas, actas y códigos QR",
         body: [
-          "Parte de la operación se realiza en piso, así que la plataforma genera etiquetas y actas en PDF y soporta la lectura de códigos QR para identificar y consultar activos rápidamente desde el móvil.",
+          "La plataforma genera etiquetas y actas en PDF y soporta la lectura de códigos QR para identificar y consultar cada activo de forma rápida y sin ambigüedades.",
         ],
         images: [
           {
-            src: "/images/clinicas/SistemaClinicas-movil-login.png",
-            alt: "Vista móvil de inicio de sesión del sistema",
-            width: 390,
-            height: 844,
+            src: "/images/kardex/SistemaClinicas-qr.png",
+            alt: "Códigos QR asociados a los activos para identificación rápida",
+            width: 1911,
+            height: 940,
+            caption: "Identificación de activos por QR",
+            frame: "desktop",
+          },
+        ],
+        layout: "media",
+      },
+      {
+        heading: "Versión móvil",
+        body: [
+          "Parte de la operación ocurre en piso, así que el sistema cuenta con vistas optimizadas para el móvil: inicio de sesión y panel de gestión adaptados a pantallas pequeñas.",
+        ],
+        images: [
+          {
+            src: "/images/kardex/SistemaClinicas-movil-login.png",
+            alt: "Vista móvil de inicio de sesión de Kardex",
+            width: 588,
+            height: 1280,
             caption: "Acceso desde el móvil",
             frame: "mobile",
           },
           {
-            src: "/images/clinicas/SistemaClinicas-movil-dashboard.png",
+            src: "/images/kardex/SistemaClinicas-movil-dashboard.png",
             alt: "Vista móvil del panel de gestión de activos",
-            width: 390,
-            height: 844,
+            width: 322,
+            height: 696,
             caption: "Panel en móvil",
             frame: "mobile",
-          },
-          {
-            src: "/images/clinicas/SistemaClinicas-qr.png",
-            alt: "Códigos QR asociados a los activos para identificación rápida",
-            width: 800,
-            height: 800,
-            caption: "Identificación de activos por QR",
-            frame: "desktop",
           },
         ],
         layout: "media",
@@ -264,7 +283,14 @@ export const projects: Project[] = [
     role: "Proyecto personal — Diseño y desarrollo full-stack",
     featured: true,
     cover: {
-      placeholderLabel: "Capturas en camino",
+      image: {
+        src: "/images/skills-browser/cover.png",
+        alt: "Portada de Skills Browser: explorador de skills de OpenCode",
+        width: 1600,
+        height: 900,
+        caption: "Skills Browser",
+        frame: "desktop",
+      },
     },
     heroIntro:
       "Aplicación local-first para explorar el catálogo de skills de OpenCode. Escanea tu propia carpeta de skills, las organiza por autor y categoría, muestra el detalle de cada una con su documentación traducida y demos interactivos, y analiza su compatibilidad con tus proyectos. Todo corre en tu máquina: sin cuentas, sin base de datos y sin telemetría.",
@@ -368,7 +394,14 @@ export const projects: Project[] = [
     role: "Diseño y desarrollo full-stack — tablero de mesa de ayuda",
     featured: true,
     cover: {
-      placeholderLabel: "Capturas en camino",
+      image: {
+        src: "/images/cola-de-tickets/cover.png",
+        alt: "Portada de Cola de Tickets: tablero de mesa de ayuda",
+        width: 1600,
+        height: 900,
+        caption: "Tablero de cola de tickets",
+        frame: "desktop",
+      },
     },
     heroIntro:
       "Tablero en tiempo real para el seguimiento de la cola de tickets de soporte técnico. Muestra la cola de atención (MDA: N1 y N2), los tickets escalados de Nivel 3 por sub-área, el ranking de técnicos, las métricas de SLA y el reporte diario exportable a Excel. Está diseñado para pantallas grandes (TV mode) y soporta tema claro y oscuro.",

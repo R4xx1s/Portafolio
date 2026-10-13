@@ -40,7 +40,7 @@ Con el compose de desarrollo, cada cambio en el código se refleja automáticame
 ```
 app/                  Páginas y layout (App Router)
   page.tsx            Home (todas las secciones)
-  projects/[slug]/    Case studies dinámicos (Sistema de Gestión de Activos TI, Skills Browser)
+  projects/[slug]/    Case studies dinámicos (Kardex, Skills Browser, Cola de Tickets)
   sitemap.ts          Sitemap generado automáticamente
   robots.ts           robots.txt generado automáticamente
   icon.png            Favicon (logo Raxxdev)
@@ -53,7 +53,7 @@ data/                 Todo el contenido real, separado de la presentación
   technologies.ts     Tecnologías agrupadas por área
   education.ts        Formación e idiomas
 public/cv/            CV en PDF
-public/images/        Capturas e imágenes (profile, clinicas)
+public/images/        Capturas e imágenes (profile, kardex, skills-browser, cola-de-tickets)
 public/videos/        Vídeos de demostración
 ```
 

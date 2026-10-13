@@ -75,6 +75,22 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               ) : null}
             </div>
 
+            {project.demoCredentials && (
+              <div className="mt-6 flex flex-col gap-1.5 rounded-[4px] border border-ink-border bg-ink-900 px-4 py-3">
+                <span className="font-mono text-[12px] uppercase tracking-wide text-signal">
+                  Acceso demo
+                  {project.demoCredentials.note ? ` · ${project.demoCredentials.note}` : ""}
+                </span>
+                <span className="font-mono text-[13px] text-paper-300">
+                  Usuario: <span className="text-paper-100">{project.demoCredentials.user}</span>
+                  <span aria-hidden className="mx-2 text-paper-500">
+                    ·
+                  </span>
+                  Contraseña: <span className="text-paper-100">{project.demoCredentials.password}</span>
+                </span>
+              </div>
+            )}
+
             <div className="mt-6 flex flex-wrap gap-2">
               {project.technologies.map((t) => (
                 <Tag key={t}>{t}</Tag>
