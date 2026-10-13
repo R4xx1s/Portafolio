@@ -7,8 +7,8 @@ export const site = {
   role: "Desarrollador Full-Stack & Ingeniero de Sistemas",
   tagline:
     "Automatizo procesos y construyo sistemas web en producción. Trabajo en las distintas capas de un producto —infraestructura, backend y frontend— con foco en resolver problemas reales de negocio.",
-  location: "Cercado de Lima, Lima, Perú",
-  url: "https://portafolio-five-eta-82.vercel.app",
+  location: "Lima, Lima, Perú",
+  url: "https://portafolio-devraxxis.vercel.app/",
   email,
   emailHref: `mailto:${email}`,
   phone,
