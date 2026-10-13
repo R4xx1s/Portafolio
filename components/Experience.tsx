@@ -4,7 +4,7 @@ import { Tag } from "@/components/ui/Tag";
 
 export function Experience() {
   return (
-    <Section id="experience">
+    <Section id="experience" className="pt-12 sm:pt-16">
       <SectionLabel>Experiencia</SectionLabel>
       <h2 className="max-w-prose font-display text-[30px] font-semibold leading-tight text-paper-100 sm:text-[36px]">
         Del soporte técnico al desarrollo en producción
