@@ -113,7 +113,7 @@ export const projects: Project[] = [
       "jsPDF",
       "Vitest",
     ],
-    liveUrl: "https://portafolio-devraxxis.vercel.app/",
+    liveUrl: "https://sistemas-inventario-kardex.vercel.app/",
     githubUrl: undefined,
     sections: [
       {
