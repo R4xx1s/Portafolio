@@ -88,8 +88,8 @@ export const projects: Project[] = [
       },
     },
     demoCredentials: {
-      user: "admin",
-      password: "Admin123",
+      user: "Demo",
+      password: "Demo123",
       note: "Cuenta de demostración",
     },
     heroIntro:
